@@ -24,9 +24,9 @@ describe('Extension API', () => {
   it('exposes extend/hook only through use()');
 
   describe('use()', () => {
-    it('calls the extension method with Cannot', (done) => {
-      const ext = (Cannot) => {
-        expect(Cannot).to.be.a('function');
+    it('calls the extension method with Broken', (done) => {
+      const ext = (Broken) => {
+        expect(Broken).to.be.a('function');
         expect(cannot).to.have.property('use');
         expect(cannot).to.have.property('extend');
         expect(cannot).to.have.property('hook');
