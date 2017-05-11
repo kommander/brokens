@@ -1,14 +1,14 @@
 {
-  "name": "cannot",
+  "name": "broken",
   "description": "Simple error handling, aiding in creating consistently human readable messages without compromising machine processing ability.",
-  "version": "2.4.3",
+  "version": "0.5.0",
   "author": "Sebastian Herrlinger <sebastian@kosmokommando.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kommander/cannot.js.git"
+    "url": "https://github.com/kommander/broken.git"
   },
-  "homepage": "https://github.com/kommander/cannot.js",
+  "homepage": "https://github.com/kommander/broken",
   "devDependencies": {
     "coveralls": "^2.11.9",
     "eslint": "^2.7.0",
@@ -16,7 +16,7 @@
     "eslint-plugin-jsx-a11y": "https://registry.npmjs.org/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-0.6.2.tgz",
     "eslint-plugin-react": "^4.3.0",
     "expect.js": "^0.3.1",
-    "istanbul": "^1.0.0-alpha.2",
+    "istanbul": "^0.4.5",
     "mocha": "^2.3.4",
     "mocha-lcov-reporter": "^1.2.0",
     "semver": "^5.1.0",
@@ -34,7 +34,7 @@
     "readable",
     "error message"
   ],
-  "main": "./lib/cannot.js",
+  "main": "./lib/core.js",
   "engines": {
     "node": ">= 4.4.3"
   },

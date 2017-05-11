@@ -56,19 +56,18 @@ report: coverage
 	@open ./coverage/lcov-report/index.html
 
 coverage:
-	@echo 'Creating coverage report.'
+	@echo 'Behaviour for Broken '$(VERSION)'.'
 	@node ./node_modules/istanbul/lib/cli.js cover \
-	./node_modules/.bin/_mocha -- $(TEST_FOLDERS) --require should --require "./dev/test.inject.js" --recursive --reporter dot
+	./node_modules/.bin/_mocha -- $(TEST_FOLDERS) --require should --require "./dev/test.inject.js" --recursive --reporter spec
 .PHONY: coverage
 
 mincov: coverage
-	@echo 'WARN: Ignoring broken check-coverage for now, waiting for final fixed istanbul 1.0.0'
-	#@node ./node_modules/istanbul/lib/cli.js check-coverage --statements 90 --functions 90 --lines 90 --branches 90
+	@node ./node_modules/istanbul/lib/cli.js check-coverage --statements 90 --functions 90 --lines 90 --branches 90
 .PHONY: mincov
 
 specs:
 	@echo 'Creating specs file from tests.'
-	make test > specs
+	make  mincov > specs
 	@echo 'Done.'
 .PHONY: specs
 
@@ -83,8 +82,7 @@ setup:
 .PHONY: setup
 
 lint:
-	@echo "Linting done."
-	@node ./node_modules/eslint/bin/eslint.js ./**/*.js ./**/**/*.js ./**/*.spec.js
+	@node ./node_modules/eslint/bin/eslint.js ./**/*.js ./**/**/*.js ./**/*.spec.js --quiet
 	@echo "ESLint done."
 .PHONY: lint
 
@@ -101,7 +99,7 @@ clean:
 	@echo "Clean."
 .PHONY: clean
 
-dev: clean setup hooks lint test coverage
+dev: clean setup hooks lint mincov
 
 release-patch: NEXT_VERSION = $(shell node -pe 'require("semver").inc("$(VERSION)", "patch")')
 release-minor: NEXT_VERSION = $(shell node -pe 'require("semver").inc("$(VERSION)", "minor")')
@@ -116,7 +114,7 @@ prerelease-alpha: release
 prerelease-beta: release
 prerelease-rc: release
 
-release: mincov test specs
+release: specs
 	@printf "Current version is $(VERSION). This will publish version $(NEXT_VERSION). Press [enter] to continue." >&2
 	@read
 	@node -e '\

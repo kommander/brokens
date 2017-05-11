@@ -1,4 +1,4 @@
-Checking behaviour for version 2.4.2.
+Checking behaviour for version 0.5.0.
 
 
   Core
@@ -77,6 +77,13 @@ Checking behaviour for version 2.4.2.
       ✓ throws for non-existing unhook name
 
 
-  51 passing (101ms)
+  51 passing (107ms)
   10 pending
 
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 148/148 )
+Branches     : 100% ( 65/65 ), 1 ignored
+Functions    : 100% ( 26/26 )
+Lines        : 100% ( 147/147 )
+================================================================================
