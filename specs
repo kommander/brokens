@@ -1,4 +1,4 @@
-Checking behaviour for version 0.5.0.
+Behaviour for Broken 0.5.0.
 
 
   Core
@@ -77,7 +77,7 @@ Checking behaviour for version 0.5.0.
       ✓ throws for non-existing unhook name
 
 
-  51 passing (107ms)
+  51 passing (101ms)
   10 pending
 
 
