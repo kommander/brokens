@@ -1,14 +1,14 @@
 {
-  "name": "broken",
+  "name": "brokens",
   "description": "Simple error handling, aiding in creating consistently human readable messages without compromising machine processing ability.",
   "version": "0.5.0",
   "author": "Sebastian Herrlinger <sebastian@kosmokommando.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kommander/broken.git"
+    "url": "https://github.com/kommander/brokens.git"
   },
-  "homepage": "https://github.com/kommander/broken",
+  "homepage": "https://github.com/kommander/brokens",
   "devDependencies": {
     "coveralls": "^2.11.9",
     "eslint": "^2.7.0",
