@@ -472,7 +472,9 @@ describe('Core', () => {
       expect(err).to.have.property('_infoStr');
       expect(err._infoStr).to.be.a('string');
       expect(err._infoStr).to.be('additional stuff');
-      expect(err.message).to.be('Error: I could not fly into the sky. (No reason) (additional stuff)');
+      expect(err.message).to.be(
+        'Error: I could not fly into the sky. (No reason) (additional stuff)'
+      );
     });
 
     it('allows to concat info with rest arguments');
