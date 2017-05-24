@@ -242,7 +242,7 @@ describe('Core', () => {
     const err = cannot('fly', 'away');
     err.subject = 'Alice';
     expect(err.subject).to.be('Alice');
-    expect(err.message).to.be('Alice could not fly away. (No reason)');
+    expect(err.message).to.be('Error: Alice could not fly away. (No reason)');
   });
 
   //
@@ -472,7 +472,7 @@ describe('Core', () => {
       expect(err).to.have.property('_infoStr');
       expect(err._infoStr).to.be.a('string');
       expect(err._infoStr).to.be('additional stuff');
-      expect(err.message).to.be('I could not fly into the sky. (No reason) (additional stuff)');
+      expect(err.message).to.be('Error: I could not fly into the sky. (No reason) (additional stuff)');
     });
 
     it('allows to concat info with rest arguments');
@@ -491,7 +491,7 @@ describe('Core', () => {
       expect(err._infoStr).to.be.a('string');
       expect(err._infoStr).to.be('additional stuff');
       // eslint-disable-next-line
-      expect(err.message).to.be('I could not fly into the sky, because I could not overcome gravity. (No reason) (additional stuff)');
+      expect(err.message).to.be('Error: I could not fly into the sky, because I could not overcome gravity. (No reason) (additional stuff)');
     });
 
     //
@@ -503,7 +503,7 @@ describe('Core', () => {
       expect(err._infoStr).to.be.a('string');
       expect(err._infoStr).to.be('additional stuff');
       // eslint-disable-next-line
-      expect(err.message).to.be('I could not fly into the sky. (No reason) (additional stuff)');
+      expect(err.message).to.be('Error: I could not fly into the sky. (No reason) (additional stuff)');
     });
 
     //
@@ -516,7 +516,7 @@ describe('Core', () => {
       expect(err._infoStr).to.be.a('string');
       expect(err._infoStr).to.be('additional stuff');
       // eslint-disable-next-line
-      expect(err.message).to.be('I could not fly into the sky, because I could not overcome gravity, because I need rocket fuel. (additional stuff)');
+      expect(err.message).to.be('Error: I could not fly into the sky, because I could not overcome gravity, because I need rocket fuel. (additional stuff)');
     });
   });
 });
