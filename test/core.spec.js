@@ -48,6 +48,8 @@ describe('Core', () => {
       'there is nothing to load'
     );
 
+    expect(err.stack).to.match(/^Error:/);
+
     if (semver.lt(process.version, '5.9.1')) {
       // Node stack growth from v5.9.0 to v5.9.1
       // at tryOnImmediate (timers.js:543:15)
